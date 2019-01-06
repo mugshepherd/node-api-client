@@ -1,3 +1,22 @@
-<p>
-  survey-details works!
-</p>
+<h5><span class="badge badge-light">{{survey._id}} -> {{survey.lemurs_quantity}}</span></h5>
+  <div [hidden]="submitted">
+    <form #detailSurveyForm="ngForm">
+      <div class="form-group">
+        <label for="lemurs_quantity">Quantity Seen</label>
+        <input type="text" class="form-control" id="lemurs_quantity" required
+        [(ngModel)]="survey.lemurs_quantity" name="lemurs_quantity" #lemurs_quantity="ngModel">
+        <div [hidden]="lemurs_quantity.valid || lemurs_quantity.pristine"
+          class="alert alert-danger">
+          Quantity seen is required</div>>
+      </div>
+    </form>
+    </div>
+
+<!-- 
+      lemurs_quantity: number;
+    year: number;
+    month: string;
+    lemur_category: string;
+    location_admin1: string;
+    location_admin2: string;
+ -->

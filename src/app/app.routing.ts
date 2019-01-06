@@ -14,7 +14,7 @@ const routes: Routes = [
         component: NewSurveyComponent
     },
     {
-        path: 'surveys:id',
+        path: 'surveys/:id',
         component: SurveyDetailsComponent
     },
     {
