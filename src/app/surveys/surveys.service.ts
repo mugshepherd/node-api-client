@@ -9,7 +9,7 @@ const httpOptions = {
 
 @Injectable()
 export class SurveyService {
-    private surveysUrl = 'http://localhost:8080/api/surveys';
+    private surveysUrl = 'http://localhost:8081/api/surveys';
     constructor(
         private http: HttpClient
     ) {}

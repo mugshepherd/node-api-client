@@ -10,6 +10,7 @@ import { SurveyListComponent } from './surveys/survey-list/survey-list.component
 import { SurveyDetailsComponent } from './surveys/survey-details/survey-details.component';
 import { NewSurveyComponent } from './surveys/new-survey/new-survey.component';
 import { AppRoutingModule } from './app.routing';
+import { SurveyService } from './surveys/surveys.service';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { AppRoutingModule } from './app.routing';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [SurveyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
