@@ -33,6 +33,7 @@ export class SurveyService {
     }
 
     updateSurvey(survey: Survey): Observable<any> {
-        return this.http.put(this.surveysUrl, survey, httpOptions);
+        const url = `${this.surveysUrl}/${survey._id}`
+        return this.http.put(url, survey, httpOptions);
     }
 }

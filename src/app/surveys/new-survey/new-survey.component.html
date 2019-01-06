@@ -1,3 +1,83 @@
-<p>
-  new-survey works!
-</p>
+<h3>Add Survey</h3>
+<div [hidden]="submitted">
+  <form #addSurveyForm="ngForm">
+
+  <!-- quantity -->
+    <div class="form-group">
+      <label for="lemurs_quantity">Quantity Seen</label>
+      <input type="number" class="form-control" id="lemurs_quantity" 
+        placeholder="Please provide quantity seen" required
+      [(ngModel)]="survey.lemurs_quantity" name="lemurs_quantity" #lemurs_quantity="ngModel">
+      <div [hidden]="lemurs_quantity.valid || lemurs_quantity.pristine"
+        class="alert alert-danger">
+        Quantity seen is required</div>
+    </div>
+
+    <!-------year------->
+    <div class="form-group">
+      <label form="year">Year</label>
+      <input type='text' class='form-control' id='year' 
+        placeholder="Please provide year" required
+        [(ngModel)]="survey.year" name="year" #year="ngModel">
+      <div [hidden]="year.valid || year.pristine">
+        Year is required
+      </div>
+    </div>
+
+    <!-------month------->
+    <div class="form-group">
+      <label form="month">Month</label>
+      <input type='text' class="form-control" id="month" 
+        placeholder="Please provide month" required
+        [(ngModel)]="survey.month" name="month" #month="ngModel">
+        <div [hidden]="month.valid || month.pristine">
+          Month is required
+        </div>
+    </div>
+
+    <!-------lemur_category------->
+    <div class="form-group">
+      <label form="lemur_category">Category of Lemur</label>
+      <input type='text' class="form-control" id="lemur_category" 
+        placeholder="Please provide Category of Lemur" required
+        [(ngModel)]="survey.lemur_category" name="lemur_category" #lemur_category="ngModel">
+        <div [hidden]="lemur_category.valid || lemur_category.pristine">
+          Category of Lemur is required
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label form="location_admin1">Admin 1 Name</label>
+      <input type="text" class="form-control" id="location_admin1" 
+        placeholder="Please provide Admin 1 where seen" required
+        [(ngModel)]="survey.location_admin1" name="location_admin1" #location_admin1="ngModel">
+        <div [hidden]="location_admin1.valid || location_admin1.pristine">
+          Location Admin1 is required
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label form="location_admin1">Admin 2 Name</label>
+      <input type="text" class="form-control" id="location_admin2" 
+        placeholder="Please provide Admin 2 where seen" required
+        [(ngModel)]="survey.location_admin2" name="location_admin2" #location_admin2="ngModel">
+        <div [hidden]="location_admin2.valid || location_admin2.pristine">
+          Location Admin2 is required
+        </div>
+    </div>
+
+    <div class="btn-group btn-group-sm">
+      <button type="button " class="btn btn-dark" (click)="goBack()">Back</button>
+      <button type="button " class="btn btn-dark" (click)="addSurvey()" [disabled]="!addSurveyForm.form.valid">Add</button>
+    </div>
+
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <p><span>Submission Successful! -> </span><span class="badge badge-light">{{survey._id}} {{survey.quantity}}</span></p>
+  <div class="btn-group btn-group-sm">
+    <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+    <button type="button" class="btn btn-dark" (click)="newSurvey(); addSurveyForm.reset()">Continue</button>
+  </div>
+</div>

@@ -71,6 +71,13 @@
   </form>
 </div>
 
+<div [hidden]="!submitted">
+  <p>{{message}}</p>
+  <div class="btn-group btn-group-sm">
+    <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+  </div>
+</div>
+
 
 
 <!-- 
