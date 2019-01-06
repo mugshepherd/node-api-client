@@ -1,7 +1,3 @@
-<p>
-  survey-list works!
-</p>
-
 <h5>All Surveys</h5>
 <div *ngFor='let survey of surveys; let rowIndex =index'>
   <a [routerLink]="['/surveys', survey._id]" style="color:black"><span class="badge badge-black">{{rowIndex + 1}}</span> -> {{survey.lemurs_quantity}}</a>

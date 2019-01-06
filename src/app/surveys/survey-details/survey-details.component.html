@@ -1,4 +1,6 @@
-<h5><span class="badge badge-light">{{survey._id}} -> {{survey.lemurs_quantity}}</span></h5>
+<h5>
+  <span class="badge badge-light" [routerLink]="['/surveys']" routerLinkActive="router-link-active" >Full List </span> &nbsp; -> &nbsp; <span class="badge" > {{survey._id}} (qty: {{survey.lemurs_quantity}})</span>
+</h5>
 <div [hidden]="submitted">
   
   <!-- BEGIN FORM-->
